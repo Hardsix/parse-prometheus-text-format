@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { parsePrometheusTextFormat } from "../index.js";
+import { parsePrometheusTextFormat, MetricFamily } from "../index.js";
 
 const inputOutputPairs = [
   {
@@ -47,6 +47,7 @@ describe("parsePrometheusTextFormat", () => {
         parsePrometheusTextFormat(inputOutputPairs[1].input)
       )
     );
+
     expect(actual).toEqual(expected);
   });
 });
@@ -61,10 +62,10 @@ describe("parsePrometheusTextFormat", () => {
  *
  * @param promJSON - the JSON array that is the result of parsing prometheus text
  */
-function normalizeNumberValues(promJSON) {
+function normalizeNumberValues(promJSON: MetricFamily[]): any[] {
   return promJSON.map((family) => ({
     ...family,
-    metrics: family.metrics.map((metric) => ({
+    metrics: family.metrics.map((metric: any) => ({
       ...metric,
       value: Number(metric.value),
       count: Number(metric.count),
@@ -81,7 +82,7 @@ function normalizeNumberValues(promJSON) {
  *
  * @param promJSON - the JSON that is the result of parsing prometheus text
  */
-function sortPromJSON(promJSON) {
+function sortPromJSON(promJSON: any[]): any[] {
   return promJSON.sort((family1, family2) => {
     if (family1.name < family2.name) {
       return -1;

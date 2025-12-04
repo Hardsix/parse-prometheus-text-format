@@ -1,15 +1,19 @@
 {
   "name": "prometheus-text-to-json",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Parses Prometheus text format into JavaScript objects",
   "type": "module",
-  "main": "src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "build": "tsc",
     "test": "jest",
     "benchmark": "node ./src/benchmark/run-benchmark.js",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "yarn build",
     "publish": "npm publish"
   },
   "author": "Tomislav Bradaric",
@@ -24,10 +28,13 @@
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/preset-env": "^7.23.0",
+    "@babel/preset-typescript": "^7.28.5",
+    "@types/jest": "^30.0.0",
     "babel-jest": "^29.7.0",
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "typescript": "^5.3.0"
   },
   "files": [
-    "src"
+    "dist"
   ]
 }

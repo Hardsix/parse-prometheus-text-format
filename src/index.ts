@@ -2,6 +2,59 @@ import { shallowEqualObjects } from "shallow-equal";
 import { InvalidLineError } from "./InvalidLineError.js";
 import { parseSampleLine } from "./parse-sample-line.js";
 
+type MetricType = "COUNTER" | "GAUGE" | "SUMMARY" | "HISTOGRAM" | "UNTYPED";
+
+interface BaseMetricSample {
+  labels?: Record<string, string>;
+  timestamp_ms?: string;
+}
+
+interface CounterSample extends BaseMetricSample {
+  value: string;
+}
+
+interface GaugeSample extends BaseMetricSample {
+  value: string;
+}
+
+interface SummarySample extends BaseMetricSample {
+  quantiles?: Record<string, string>;
+  count?: string;
+  sum?: string;
+}
+
+interface HistogramSample extends BaseMetricSample {
+  buckets: Record<string, string>;
+  count: string;
+  sum: string;
+}
+
+interface UntypedSample extends BaseMetricSample {
+  value?: string;
+}
+
+type MetricSample<T extends MetricType = MetricType> =
+  T extends "COUNTER" ? CounterSample :
+  T extends "GAUGE" ? GaugeSample :
+  T extends "SUMMARY" ? SummarySample :
+  T extends "HISTOGRAM" ? HistogramSample :
+  T extends "UNTYPED" ? UntypedSample :
+  CounterSample | GaugeSample | SummarySample | HistogramSample | UntypedSample;
+
+type MetricFamily<T extends MetricType = MetricType> = {
+  name: string;
+  help: string;
+  type: T;
+  metrics: MetricSample<T>[];
+}
+
+type AnyMetricFamily =
+  | MetricFamily<"COUNTER">
+  | MetricFamily<"GAUGE">
+  | MetricFamily<"SUMMARY">
+  | MetricFamily<"HISTOGRAM">
+  | MetricFamily<"UNTYPED">;
+
 /*
 Notes:
 * Empty line handling is slightly looser than the original implementation.
@@ -10,14 +63,14 @@ Notes:
 const SUMMARY_TYPE = "SUMMARY";
 const HISTOGRAM_TYPE = "HISTOGRAM";
 
-function parsePrometheusTextFormat(metrics) {
+function parsePrometheusTextFormat(metrics: string): AnyMetricFamily[] {
   const lines = metrics.split("\n"); // Prometheus format defines LF endings
-  const converted = [];
+  const converted: AnyMetricFamily[] = [];
 
-  let metric;
-  let help;
-  let type;
-  let samples = [];
+  let metric: string | null = null;
+  let help: string | null = null;
+  let type: string | null = null;
+  let samples: any[] = [];
 
   for (let i = 0; i < lines.length; ++i) {
     const line = lines[i].trim();
@@ -101,7 +154,7 @@ function parsePrometheusTextFormat(metrics) {
         converted.push({
           name: metric,
           help: help ? help : "",
-          type: type ? type : "UNTYPED",
+          type: (type as MetricFamily["type"]) || "UNTYPED",
           metrics: samples,
         });
       }
@@ -147,9 +200,14 @@ function parsePrometheusTextFormat(metrics) {
   return converted;
 }
 
-function flattenMetrics(metrics, groupName, keyName, valueName) {
+function flattenMetrics(
+  metrics: any[],
+  groupName: string,
+  keyName: string,
+  valueName: string
+): any[] {
   // Group metrics by their non-keyName labels to preserve series identity
-  const groups = {};
+  const groups: Record<string, any> = {};
 
   for (let i = 0; i < metrics.length; ++i) {
     const sample = metrics[i];
@@ -170,7 +228,7 @@ function flattenMetrics(metrics, groupName, keyName, valueName) {
         labels: Object.keys(otherLabels).length > 0 ? otherLabels : undefined,
         buckets: {},
         count: undefined,
-        sum: undefined
+        sum: undefined,
       };
     }
 
@@ -191,8 +249,8 @@ function flattenMetrics(metrics, groupName, keyName, valueName) {
   }
 
   // Convert groups object to array
-  const result = Object.values(groups).map(group => {
-    const metric = {};
+  const result = Object.values(groups).map((group) => {
+    const metric: any = {};
 
     // Only add buckets/quantiles if there are any
     if (Object.keys(group.buckets).length > 0) {
@@ -215,7 +273,7 @@ function flattenMetrics(metrics, groupName, keyName, valueName) {
 }
 
 // adapted from https://github.com/prometheus/client_python/blob/0.0.19/prometheus_client/parser.py
-function unescapeHelp(line) {
+function unescapeHelp(line: string): string {
   let result = "";
   let slash = false;
 
@@ -246,4 +304,4 @@ function unescapeHelp(line) {
   return result;
 }
 
-export { parsePrometheusTextFormat };
+export { parsePrometheusTextFormat, MetricFamily, MetricSample };

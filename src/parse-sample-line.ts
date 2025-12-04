@@ -13,7 +13,14 @@ const STATE_LABELVALUESLASH = 9;
 const STATE_NEXTLABEL = 10;
 const STATE_TIMESTAMP = 11;
 
-function parseSampleLine(line) {
+export interface ParsedSample {
+  name: string;
+  value: string;
+  labels?: Record<string, string>;
+  timestamp_ms?: string;
+}
+
+export function parseSampleLine(line: string): ParsedSample {
   let name = "";
   let labelname = "";
   let labelvalue = "";
@@ -133,17 +140,11 @@ function parseSampleLine(line) {
     }
   }
 
-  const ret = {
+  const ret: ParsedSample = {
     name,
     value,
+    ...(labels && { labels }),
+    ...(timestamp && { timestamp_ms: timestamp }),
   };
-  if (labels) {
-    ret.labels = labels;
-  }
-  if (timestamp) {
-    ret.timestamp_ms = timestamp;
-  }
   return ret;
 }
-
-export { parseSampleLine };
