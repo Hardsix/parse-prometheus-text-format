@@ -1,9 +1,7 @@
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { parsePrometheusTextFormat } from "../../dist/index.js";
+const fs = require("fs");
+const path = require("path");
+const { parsePrometheusTextFormat } = require("../../dist/index.js");
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const inputStr = fs.readFileSync(
   path.join(__dirname, "../__tests__/input-output-pairs/simple/input.txt"),
   "utf8"

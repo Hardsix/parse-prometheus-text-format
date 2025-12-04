@@ -1,8 +1,7 @@
 {
   "name": "prometheus-text-to-json",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "Parses Prometheus text format into JavaScript objects",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "engines": {

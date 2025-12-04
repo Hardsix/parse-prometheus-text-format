@@ -1,6 +1,6 @@
 import { shallowEqualObjects } from "shallow-equal";
-import { InvalidLineError } from "./InvalidLineError.js";
-import { parseSampleLine } from "./parse-sample-line.js";
+import { InvalidLineError } from "./InvalidLineError";
+import { parseSampleLine } from "./parse-sample-line";
 
 type MetricType = "COUNTER" | "GAUGE" | "SUMMARY" | "HISTOGRAM" | "UNTYPED";
 
