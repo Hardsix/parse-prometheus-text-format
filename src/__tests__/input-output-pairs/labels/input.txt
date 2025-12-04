@@ -1,0 +1,298 @@
+# HELP target_info Target metadata
+# TYPE target_info gauge
+target_info{service_name="unknown_service:/Users/swift/.nvm/versions/node/v20.17.0/bin/node",telemetry_sdk_language="nodejs",telemetry_sdk_name="opentelemetry",telemetry_sdk_version="1.21.0",service_version="UNKNOWN-VERSION",service_instance_id="local",process_pid="38904",process_executable_name="/Users/swift/.nvm/versions/node/v20.17.0/bin/node",process_executable_path="/Users/swift/.nvm/versions/node/v20.17.0/bin/node",process_command_args="[\"/Users/swift/.nvm/versions/node/v20.17.0/bin/node\",\"-r\",\"/Users/swift/projects/minka/ledger/node_modules/@nx/js/node_modules/source-map-support/register.js\",\"--inspect=localhost:8801\",\"-r\",\"/Users/swift/projects/minka/ledger/node_modules/@nx/js/node_modules/source-map-support/register.js\",\"--inspect=localhost:8801\",\"/Users/swift/projects/minka/ledger/node_modules/@nx/js/src/executors/node/node-with-require-overrides\"]",process_runtime_version="20.17.0",process_runtime_name="nodejs",process_runtime_description="Node.js",process_command="/Users/swift/projects/minka/ledger/node_modules/@nx/js/src/executors/node/node-with-require-overrides",process_owner="swift"} 1
+# HELP http_server_duration Measures the duration of inbound HTTP requests.
+# UNIT http_server_duration ms
+# TYPE http_server_duration histogram
+http_server_duration_count{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2"} 1
+http_server_duration_sum{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2"} 376.870708
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="50"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="75"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="100"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="250"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="750"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="1000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="2500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="5000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="7500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="10000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2",le="+Inf"} 1
+http_server_duration_count{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers"} 2
+http_server_duration_sum{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers"} 642.3090420000001
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="50"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="75"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="100"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="250"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="750"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="1000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="2500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="5000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="7500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="10000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/ledgers",le="+Inf"} 2
+http_server_duration_count{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id"} 2
+http_server_duration_sum{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id"} 111.091916
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="50"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="75"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="100"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="250"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="750"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="1000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="2500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="5000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="7500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="10000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/signers/:id",le="+Inf"} 2
+http_server_duration_count{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents"} 1
+http_server_duration_sum{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents"} 278.828291
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="50"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="75"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="100"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="250"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="750"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="1000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="2500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="5000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="7500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="10000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="201",net_host_port="3000",http_route="/v2/intents",le="+Inf"} 1
+http_server_duration_count{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id"} 1
+http_server_duration_sum{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id"} 46.608834
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="50"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="75"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="100"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="250"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="750"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="1000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="2500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="5000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="7500"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="10000"} 1
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id",le="+Inf"} 1
+http_server_duration_count{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs"} 3
+http_server_duration_sum{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs"} 158.41616699999997
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="5"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="10"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="25"} 0
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="50"} 2
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="75"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="100"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="250"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="500"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="750"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="1000"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="2500"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="5000"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="7500"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="10000"} 3
+http_server_duration_bucket{http_scheme="http",http_method="POST",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="3000",http_route="/v2/intents/:id/proofs",le="+Inf"} 3
+http_server_duration_count{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464"} 2
+http_server_duration_sum{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464"} 7.323625
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="0"} 0
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="5"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="10"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="25"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="50"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="75"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="100"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="250"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="750"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="1000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="2500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="5000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="7500"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="10000"} 2
+http_server_duration_bucket{http_scheme="http",http_method="GET",net_host_name="localhost",http_flavor="1.1",http_status_code="200",net_host_port="9464",le="+Inf"} 2
+# HELP http_client_duration Measures the duration of outbound HTTP requests.
+# UNIT http_client_duration ms
+# TYPE http_client_duration histogram
+http_client_duration_count{http_method="POST",net_peer_name="localhost"} 12
+http_client_duration_sum{http_method="POST",net_peer_name="localhost"} 1116.7586660000002
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="0"} 0
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="5"} 6
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="10"} 8
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="25"} 9
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="50"} 10
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="75"} 10
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="100"} 10
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="250"} 10
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="500"} 10
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="750"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="1000"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="2500"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="5000"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="7500"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="10000"} 12
+http_client_duration_bucket{http_method="POST",net_peer_name="localhost",le="+Inf"} 12
+# HELP nodejs_eventloop_utilization Event loop utilization
+# UNIT nodejs_eventloop_utilization 1
+# TYPE nodejs_eventloop_utilization gauge
+nodejs_eventloop_utilization 0.3028464789335272
+# HELP nodejs_eventloop_time Cumulative duration of time the event loop has been in each state.
+# UNIT nodejs_eventloop_time s
+# TYPE nodejs_eventloop_time counter
+nodejs_eventloop_time{nodejs_eventloop_state="active"} 8.006751698988445
+nodejs_eventloop_time{nodejs_eventloop_state="idle"} 20.241668842
+# HELP nodejs_eventloop_delay_min Event loop minimum delay.
+# UNIT nodejs_eventloop_delay_min s
+# TYPE nodejs_eventloop_delay_min gauge
+nodejs_eventloop_delay_min 0.007962624
+# HELP nodejs_eventloop_delay_max Event loop maximum delay.
+# UNIT nodejs_eventloop_delay_max s
+# TYPE nodejs_eventloop_delay_max gauge
+nodejs_eventloop_delay_max 0.018366463
+# HELP nodejs_eventloop_delay_mean Event loop mean delay.
+# UNIT nodejs_eventloop_delay_mean s
+# TYPE nodejs_eventloop_delay_mean gauge
+nodejs_eventloop_delay_mean 0.010962552540792541
+# HELP nodejs_eventloop_delay_stddev Event loop standard deviation delay.
+# UNIT nodejs_eventloop_delay_stddev s
+# TYPE nodejs_eventloop_delay_stddev gauge
+nodejs_eventloop_delay_stddev 0.0005754998864144425
+# HELP nodejs_eventloop_delay_p50 Event loop 50 percentile delay.
+# UNIT nodejs_eventloop_delay_p50 s
+# TYPE nodejs_eventloop_delay_p50 gauge
+nodejs_eventloop_delay_p50 0.011034623
+# HELP nodejs_eventloop_delay_p90 Event loop 90 percentile delay.
+# UNIT nodejs_eventloop_delay_p90 s
+# TYPE nodejs_eventloop_delay_p90 gauge
+nodejs_eventloop_delay_p90 0.011059199
+# HELP nodejs_eventloop_delay_p99 Event loop 99 percentile delay.
+# UNIT nodejs_eventloop_delay_p99 s
+# TYPE nodejs_eventloop_delay_p99 gauge
+nodejs_eventloop_delay_p99 0.012722175
+# HELP v8js_gc_duration Garbage collection duration by kind, one of major, minor, incremental or weakcb.
+# UNIT v8js_gc_duration s
+# TYPE v8js_gc_duration histogram
+v8js_gc_duration_count{v8js_gc_type="minor"} 45
+v8js_gc_duration_sum{v8js_gc_type="minor"} 0.0953992121219635
+v8js_gc_duration_bucket{v8js_gc_type="minor",le="0.01"} 43
+v8js_gc_duration_bucket{v8js_gc_type="minor",le="0.1"} 45
+v8js_gc_duration_bucket{v8js_gc_type="minor",le="1"} 45
+v8js_gc_duration_bucket{v8js_gc_type="minor",le="10"} 45
+v8js_gc_duration_bucket{v8js_gc_type="minor",le="+Inf"} 45
+v8js_gc_duration_count{v8js_gc_type="incremental"} 4
+v8js_gc_duration_sum{v8js_gc_type="incremental"} 0.007197959065437317
+v8js_gc_duration_bucket{v8js_gc_type="incremental",le="0.01"} 4
+v8js_gc_duration_bucket{v8js_gc_type="incremental",le="0.1"} 4
+v8js_gc_duration_bucket{v8js_gc_type="incremental",le="1"} 4
+v8js_gc_duration_bucket{v8js_gc_type="incremental",le="10"} 4
+v8js_gc_duration_bucket{v8js_gc_type="incremental",le="+Inf"} 4
+v8js_gc_duration_count{v8js_gc_type="major"} 4
+v8js_gc_duration_sum{v8js_gc_type="major"} 0.06890762501955032
+v8js_gc_duration_bucket{v8js_gc_type="major",le="0.01"} 2
+v8js_gc_duration_bucket{v8js_gc_type="major",le="0.1"} 4
+v8js_gc_duration_bucket{v8js_gc_type="major",le="1"} 4
+v8js_gc_duration_bucket{v8js_gc_type="major",le="10"} 4
+v8js_gc_duration_bucket{v8js_gc_type="major",le="+Inf"} 4
+# HELP v8js_memory_heap_limit Total heap memory size pre-allocated.
+# UNIT v8js_memory_heap_limit By
+# TYPE v8js_memory_heap_limit gauge
+v8js_memory_heap_limit{v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_limit{v8js_heap_space_name="new_space"} 33554432
+v8js_memory_heap_limit{v8js_heap_space_name="old_space"} 191135744
+v8js_memory_heap_limit{v8js_heap_space_name="code_space"} 10747904
+v8js_memory_heap_limit{v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_limit{v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_limit{v8js_heap_space_name="large_object_space"} 62849024
+v8js_memory_heap_limit{v8js_heap_space_name="code_large_object_space"} 1114112
+v8js_memory_heap_limit{v8js_heap_space_name="shared_large_object_space"} 0
+# HELP v8js_memory_heap_used Heap Memory size allocated.
+# UNIT v8js_memory_heap_used By
+# TYPE v8js_memory_heap_used gauge
+v8js_memory_heap_used{v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_used{v8js_heap_space_name="new_space"} 8361176
+v8js_memory_heap_used{v8js_heap_space_name="old_space"} 187019176
+v8js_memory_heap_used{v8js_heap_space_name="code_space"} 8243664
+v8js_memory_heap_used{v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_used{v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_used{v8js_heap_space_name="large_object_space"} 62325288
+v8js_memory_heap_used{v8js_heap_space_name="code_large_object_space"} 891904
+v8js_memory_heap_used{v8js_heap_space_name="shared_large_object_space"} 0
+# HELP v8js_memory_heap_space_available_size Heap space available size.
+# UNIT v8js_memory_heap_space_available_size By
+# TYPE v8js_memory_heap_space_available_size gauge
+v8js_memory_heap_space_available_size{v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_space_available_size{v8js_heap_space_name="new_space"} 8132904
+v8js_memory_heap_space_available_size{v8js_heap_space_name="old_space"} 603696
+v8js_memory_heap_space_available_size{v8js_heap_space_name="code_space"} 488288
+v8js_memory_heap_space_available_size{v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_space_available_size{v8js_heap_space_name="new_large_object_space"} 16777216
+v8js_memory_heap_space_available_size{v8js_heap_space_name="large_object_space"} 0
+v8js_memory_heap_space_available_size{v8js_heap_space_name="code_large_object_space"} 0
+v8js_memory_heap_space_available_size{v8js_heap_space_name="shared_large_object_space"} 0
+# HELP v8js_memory_heap_space_physical_size Committed size of a heap space.
+# UNIT v8js_memory_heap_space_physical_size By
+# TYPE v8js_memory_heap_space_physical_size gauge
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="read_only_space"} 0
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="new_space"} 33554432
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="old_space"} 191135744
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="code_space"} 9404416
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="shared_space"} 0
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="new_large_object_space"} 0
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="large_object_space"} 62849024
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="code_large_object_space"} 1114112
+v8js_memory_heap_space_physical_size{v8js_heap_space_name="shared_large_object_space"} 0
+# HELP intent_status_change_total Total number of intent status changes
+# UNIT intent_status_change_total {changes}
+# TYPE intent_status_change_total counter
+intent_status_change_total{ledger_handle="-1PF6EFEvuD9TloA7",status="pending"} 1
+intent_status_change_total{ledger_handle="-1PF6EFEvuD9TloA7",status="prepared"} 1
+intent_status_change_total{ledger_handle="-1PF6EFEvuD9TloA7",status="committed"} 1
+intent_status_change_total{ledger_handle="-1PF6EFEvuD9TloA7",status="completed"} 1
+# HELP api_locks_acquire_total Total number of lock acquisition attempts (success or failure after retries exhausted)
+# UNIT api_locks_acquire_total {operations}
+# TYPE api_locks_acquire_total counter
+api_locks_acquire_total{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success"} 4
+# HELP api_locks_release_total Total number of lock release attempts (success, failure after retries, or owner cleanup failure)
+# UNIT api_locks_release_total {operations}
+# TYPE api_locks_release_total counter
+api_locks_release_total{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success"} 4
+# HELP api_locks_acquire_wait_milliseconds Time spent waiting to acquire a lock (includes retry delays)
+# UNIT api_locks_acquire_wait_milliseconds ms
+# TYPE api_locks_acquire_wait_milliseconds histogram
+api_locks_acquire_wait_milliseconds_count{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success"} 4
+api_locks_acquire_wait_milliseconds_sum{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success"} 19.535625000000437
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="0"} 0
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="5"} 3
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="10"} 3
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="25"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="50"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="75"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="100"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="250"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="500"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="750"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="1000"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="2500"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="5000"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="7500"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="10000"} 4
+api_locks_acquire_wait_milliseconds_bucket{ledger_handle="-1PF6EFEvuD9TloA7",resource_type="intent",status="success",le="+Inf"} 4

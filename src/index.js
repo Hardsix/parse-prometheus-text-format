@@ -148,32 +148,70 @@ function parsePrometheusTextFormat(metrics) {
 }
 
 function flattenMetrics(metrics, groupName, keyName, valueName) {
-  let flattened = null;
+  // Group metrics by their non-keyName labels to preserve series identity
+  const groups = {};
+
   for (let i = 0; i < metrics.length; ++i) {
     const sample = metrics[i];
-    if (sample.labels && sample.labels[keyName] && sample[valueName]) {
-      if (!flattened) {
-        flattened = {};
-        flattened[groupName] = {};
-      }
-      flattened[groupName][sample.labels[keyName]] = sample[valueName];
-    } else if (!sample.labels) {
-      if (!flattened) {
-        flattened = {};
-      }
-      if (sample.count !== undefined) {
-        flattened.count = sample.count;
-      }
-      if (sample.sum !== undefined) {
-        flattened.sum = sample.sum;
+
+    // Create a key based on all labels except the keyName (le/quantile)
+    const otherLabels = {};
+    if (sample.labels) {
+      for (const labelKey in sample.labels) {
+        if (labelKey !== keyName) {
+          otherLabels[labelKey] = sample.labels[labelKey];
+        }
       }
     }
+    const groupKey = JSON.stringify(otherLabels);
+
+    if (!groups[groupKey]) {
+      groups[groupKey] = {
+        labels: Object.keys(otherLabels).length > 0 ? otherLabels : undefined,
+        buckets: {},
+        count: undefined,
+        sum: undefined
+      };
+    }
+
+    const group = groups[groupKey];
+
+    // Add bucket/quantile value
+    if (sample.labels && sample.labels[keyName] && sample[valueName]) {
+      group.buckets[sample.labels[keyName]] = sample[valueName];
+    }
+
+    // Add count and sum
+    if (sample.count !== undefined) {
+      group.count = sample.count;
+    }
+    if (sample.sum !== undefined) {
+      group.sum = sample.sum;
+    }
   }
-  if (flattened) {
-    return [flattened];
-  } else {
-    return metrics;
-  }
+
+  // Convert groups object to array
+  const result = Object.values(groups).map(group => {
+    const metric = {};
+
+    // Only add buckets/quantiles if there are any
+    if (Object.keys(group.buckets).length > 0) {
+      metric[groupName] = group.buckets;
+    }
+
+    if (group.labels) {
+      metric.labels = group.labels;
+    }
+    if (group.count !== undefined) {
+      metric.count = group.count;
+    }
+    if (group.sum !== undefined) {
+      metric.sum = group.sum;
+    }
+    return metric;
+  });
+
+  return result.length > 0 ? result : metrics;
 }
 
 // adapted from https://github.com/prometheus/client_python/blob/0.0.19/prometheus_client/parser.py

@@ -1,20 +1,51 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { parsePrometheusTextFormat } from "../index.js";
 
-const inputStr = fs.readFileSync(path.join(__dirname, "input.txt"), "utf8");
-const expectedStr = fs.readFileSync(
-  path.join(__dirname, "expected-output.json"),
-  "utf8"
-);
+const inputOutputPairs = [
+  {
+    input: fs.readFileSync(
+      path.join(__dirname, "./input-output-pairs/simple/input.txt"),
+      "utf8"
+    ),
+    output: fs.readFileSync(
+      path.join(__dirname, "./input-output-pairs/simple/expected-output.json"),
+      "utf8"
+    ),
+  },
+  {
+    input: fs.readFileSync(
+      path.join(__dirname, "./input-output-pairs/labels/input.txt"),
+      "utf8"
+    ),
+    output: fs.readFileSync(
+      path.join(__dirname, "./input-output-pairs/labels/expected-output.json"),
+      "utf8"
+    ),
+  },
+];
 
 describe("parsePrometheusTextFormat", () => {
   it("should parse Prometheus text format correctly", () => {
     const expected = sortPromJSON(
-      normalizeNumberValues(JSON.parse(expectedStr))
+      normalizeNumberValues(JSON.parse(inputOutputPairs[0].output))
     );
     const actual = sortPromJSON(
-      normalizeNumberValues(parsePrometheusTextFormat(inputStr))
+      normalizeNumberValues(
+        parsePrometheusTextFormat(inputOutputPairs[0].input)
+      )
+    );
+    expect(actual).toEqual(expected);
+  });
+
+  it("should parse histograms with labels correctly", () => {
+    const expected = sortPromJSON(
+      normalizeNumberValues(JSON.parse(inputOutputPairs[1].output))
+    );
+    const actual = sortPromJSON(
+      normalizeNumberValues(
+        parsePrometheusTextFormat(inputOutputPairs[1].input)
+      )
     );
     expect(actual).toEqual(expected);
   });
