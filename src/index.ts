@@ -33,20 +33,29 @@ interface UntypedSample extends BaseMetricSample {
   value?: string;
 }
 
-type MetricSample<T extends MetricType = MetricType> =
-  T extends "COUNTER" ? CounterSample :
-  T extends "GAUGE" ? GaugeSample :
-  T extends "SUMMARY" ? SummarySample :
-  T extends "HISTOGRAM" ? HistogramSample :
-  T extends "UNTYPED" ? UntypedSample :
-  CounterSample | GaugeSample | SummarySample | HistogramSample | UntypedSample;
+type MetricSample<T extends MetricType = MetricType> = T extends "COUNTER"
+  ? CounterSample
+  : T extends "GAUGE"
+  ? GaugeSample
+  : T extends "SUMMARY"
+  ? SummarySample
+  : T extends "HISTOGRAM"
+  ? HistogramSample
+  : T extends "UNTYPED"
+  ? UntypedSample
+  :
+      | CounterSample
+      | GaugeSample
+      | SummarySample
+      | HistogramSample
+      | UntypedSample;
 
 type MetricFamily<T extends MetricType = MetricType> = {
   name: string;
   help: string;
   type: T;
   metrics: MetricSample<T>[];
-}
+};
 
 type AnyMetricFamily =
   | MetricFamily<"COUNTER">
@@ -304,4 +313,16 @@ function unescapeHelp(line: string): string {
   return result;
 }
 
-export { parsePrometheusTextFormat, MetricFamily, MetricSample };
+export {
+  parsePrometheusTextFormat,
+  MetricType,
+  MetricFamily,
+  MetricSample,
+  AnyMetricFamily,
+  BaseMetricSample,
+  CounterSample,
+  GaugeSample,
+  SummarySample,
+  HistogramSample,
+  UntypedSample,
+};
