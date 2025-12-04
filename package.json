@@ -1,6 +1,6 @@
 {
   "name": "prometheus-text-to-json",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Parses Prometheus text format into JavaScript objects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,7 @@
     "benchmark": "node ./src/benchmark/run-benchmark.js",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "yarn build",
-    "publish": "npm publish"
+    "publish": "yarn build && npm publish"
   },
   "author": "Tomislav Bradaric",
   "license": "Apache-2.0",
